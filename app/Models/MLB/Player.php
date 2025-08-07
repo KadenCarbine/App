@@ -11,4 +11,7 @@ class Player extends Model
     use HasFactory;
 
     protected $guarded = [];
+    protected $primaryKey = 'uuid';
+    public $incrementing = false;
+    protected $keyType = 'string';
 }

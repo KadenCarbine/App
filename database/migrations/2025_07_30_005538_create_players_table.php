@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('players', function (Blueprint $table) {
-            $table->uuid();
+            $table->uuid()->primary();
             $table->string('name');
             $table->string('type');
             $table->string('img');

@@ -13,7 +13,7 @@ class PlayerController extends Controller
     public function index()
     {
         $players = Player::query()->paginate(25);
-        return view('MLB.index', compact('players'));
+        return view('mlb.index', compact('players'));
     }
 
     /**
@@ -35,9 +35,10 @@ class PlayerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Player $player)
+    public function show(string $uuid)
     {
-        //
+        $player = Player::query()->findOrFail($uuid);
+        return view('mlb.show', compact('player'));
     }
 
     /**

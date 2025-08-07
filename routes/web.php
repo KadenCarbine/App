@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 
 Route::get('/mlb', [PlayerController::class, 'index'])->name('mlb.index');
+Route::get('/mlb/{uuid}', [PlayerController::class, 'show'])->name('mlb.show');

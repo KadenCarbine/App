@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="bg-white">
-    <header class="absolute inset-x-0 top-0 z-50">
+    <header>
         <x-navbar></x-navbar>
         <el-dialog>
             <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
@@ -53,7 +53,7 @@
             </dialog>
         </el-dialog>
     </header>
-    <div class="relative isolate px-6 pt-14 lg:px-8">
+    <div class="px-6 lg:px-8">
         {{ $slot }}
     </div>
 </div>
