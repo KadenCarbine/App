@@ -18,7 +18,7 @@
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
         <a href="/mlb" class="text-sm/6 font-semibold text-gray-900">MLB The Show</a>
-        <a href="/fitness" class="text-sm/6 font-semibold text-gray-900">Fitness</a>
+        <a href="/fitness/weight" class="text-sm/6 font-semibold text-gray-900">Fitness</a>
         <a href="#" class="text-sm/6 font-semibold text-gray-900">Marketplace</a>
         <a href="#" class="text-sm/6 font-semibold text-gray-900">Company</a>
     </div>

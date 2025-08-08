@@ -11,4 +11,5 @@ Route::get('/', function () {
 Route::get('/mlb', [PlayerController::class, 'index'])->name('mlb.index');
 Route::get('/mlb/{uuid}', [PlayerController::class, 'show'])->name('mlb.show');
 
-Route::get('/fitness', [FitnessController::class, 'index'])->name('fitness.index');
+Route::get('/fitness/weight', [FitnessController::class, 'index'])->name('fitness.index');
+Route::post('/fitness/weight', [FitnessController::class, 'weight'])->name('fitness.weight');

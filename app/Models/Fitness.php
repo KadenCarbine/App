@@ -9,4 +9,8 @@ class Fitness extends Model
 {
     /** @use HasFactory<\Database\Factories\FitnessFactory> */
     use HasFactory;
+
+    protected $table = 'fitness';
+
+    protected $fillable = ['weight'];
 }

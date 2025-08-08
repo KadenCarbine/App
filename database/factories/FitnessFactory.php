@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Date;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Fitness>
@@ -17,7 +18,9 @@ class FitnessFactory extends Factory
     public function definition(): array
     {
         return [
-            
+            'weight' => rand(180, 250),
+            'created_at' => Date::now(),
+            'updated_at' => Date::now(),
         ];
     }
 }

@@ -13,11 +13,20 @@ class FitnessController extends Controller
      */
     public function index()
     {
+
+        $fitnessData = Fitness::all();
+
+        $weight = [];
+        $labels = [];
+        foreach ($fitnessData as $fitness) {
+            $labels[] = $fitness->created_at->format('Y-m-d');
+            $weight[] = $fitness->weight;
+        }
         $chart = Chartjs::build()
             ->name('Weight')
             ->type('line')
             ->size(['width' => 400, 'height' => 200])
-            ->labels(['January', 'February', 'March', 'April', 'May', 'June', 'July'])
+            ->labels($labels)
             ->datasets([
                 [
                     "label" => "Weight",
@@ -27,7 +36,7 @@ class FitnessController extends Controller
                     "pointBackgroundColor" => "rgba(38, 185, 154, 0.7)",
                     "pointHoverBackgroundColor" => "#fff",
                     "pointHoverBorderColor" => "rgba(220,220,220,1)",
-                    "data" => [65, 59, 80, 81, 56, 55, 40],
+                    "data" => $weight,
                     "fill" => false,
                 ]
             ])
@@ -35,6 +44,15 @@ class FitnessController extends Controller
 
         return view('fitness.index', compact('chart'));
 
+    }
+
+    public function weight(Request $request)
+    {
+        $data = $request->validate([
+            'weight' => ['required', 'numeric', 'min:1'],
+        ]);
+        Fitness::create([...$data]);
+        return redirect()->route('fitness.index');
     }
 
     /**
